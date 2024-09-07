@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" action="" novalidate>
+    {{ form.hidden_tag() }}
+    <h1>Display Students Page</h1>
+
+    <p>List of all students and data is above in green on seperate lines:</p>
+
+    {% for student in students %}
+            <p>Student ID: {{student.student_id }}, Username: {{student.username }}, Firstname: {{student.firstname }},
+                Lastname: {{ student.lastname }}, Email: {{ student.email }}, Loans: {{ student.loans }}</p>
+    {% endfor %}
+<!--Above is code trying to display the student object's attributes but I could not get it to show in page-->
+
+    <div>{{ form.submit() }}</div>
+</form>
+{% endblock %}
