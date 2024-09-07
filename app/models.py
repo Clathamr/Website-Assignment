@@ -1,5 +1,7 @@
 from app import db
 
+# This file contains the structures for the different SQLAlchemy database models
+
 
 class Student(db.Model):
     __tablename__ = 'students'

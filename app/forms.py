@@ -4,6 +4,8 @@ from wtforms.validators import DataRequired, EqualTo, Email, ValidationError
 from app.models import Student, Loan
 from sqlalchemy import and_
 
+# This file contains the form classes used by the web app in views.py
+
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])

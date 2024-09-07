@@ -4,6 +4,8 @@ from datetime import datetime
 from app.forms import LoginForm, RegistrationForm, AddStudentForm, BorrowForm, DisplayStudentForm, DeactivateStudentForm
 from app.models import Student, Loan
 
+# This file contains all the route definitions for the web app, e.g., login, registration, borrow item etc.
+
 
 @app.route('/')
 @app.route('/index')
@@ -62,7 +64,6 @@ def borrow():
         new_loan = Loan(device_id=form.device_id.data,
                         student_id=form.student_id.data,
                         borrowdatetime=datetime.now())
-
         db.session.add(new_loan)
         try:
             db.session.commit()
@@ -70,6 +71,7 @@ def borrow():
             return redirect(url_for('index'))
         except:
             db.session.rollback()
+
     return render_template('borrow.html', title='Borrow', form=form)
 
 
